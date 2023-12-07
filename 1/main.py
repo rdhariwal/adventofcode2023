@@ -42,6 +42,10 @@ def enhanced_compute(input = "input"):
                 tld = line[slength - i - 1]
                 if tld.isnumeric() and ld == "0":
                     ld = tld
+                if line[0:i+1].find("one") >= 0:
+                    fd = "1"
+                if line[slength - i + 1:].find("one"):
+                    ld = "1"
                 if fd != "0" and ld != "0":
                     break
             print(line)
